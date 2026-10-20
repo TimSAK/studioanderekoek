@@ -3,271 +3,284 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>studio andere koek · software-ontwikkeling en agentic development in Groningen</title>
-  <meta name="description" content="Studio andere koek bouwt webapplicaties, platforms en koppelingen met een agentic werkwijze: AI-agents doen het zware werk, ervaring houdt de regie.">
+  <title>Websites, apps en software laten maken in Groningen · studio andere koek</title>
+  <meta name="description" content="Studio andere koek in Groningen bouwt websites, webapplicaties, apps en koppelingen met een agentic werkwijze: AI-agents doen het zware werk, een ervaren developer houdt de regie.">
   <link rel="canonical" href="https://studioanderekoek.nl/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://studioanderekoek.nl/">
   <meta property="og:title" content="studio andere koek">
-  <meta property="og:description" content="Vakmanschap en een agentic werkwijze. Software-ontwikkeling vanuit Groningen.">
+  <meta property="og:description" content="Software bouwen is andere koek. Vakmanschap en een agentic werkwijze, vanuit Groningen.">
   <meta property="og:image" content="https://studioanderekoek.nl/img/logo.png">
-  <meta name="theme-color" content="#fbfaf7">
-  <link rel="icon" href="favicon.ico" sizes="16x16">
+  <meta name="theme-color" content="#eef3f1" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e2f36" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/svg+xml" href="img/kolibrie.svg">
   <link rel="icon" type="image/png" href="img/icon-180.png">
   <link rel="apple-touch-icon" href="img/icon-180.png">
-  <link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/big-shoulders-800.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/public-sans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
+  <!-- TIJDELIJK: gekozen kleur uit de versiebalk (auto/licht/donker) vóór het tekenen toepassen -->
+  <script>try{var k=localStorage.getItem('sak-kleur');if(k==='donker')document.documentElement.setAttribute('data-theme','dark');else if(k==='licht')document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
+  <script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.motionReady)document.documentElement.classList.remove('js')},3000);</script>
 </head>
 <body>
 
 <a class="skip" href="#main">Naar de inhoud</a>
 
-<header class="site-header">
-  <div class="wrap header-row">
-    <a class="brand" href="#top">
-      <img src="img/logo.png" alt="studio andere koek" width="1177" height="234">
-    </a>
-    <nav class="nav" aria-label="Hoofdmenu">
-      <a href="#diensten">Diensten</a>
-      <a href="#werkwijze">Werkwijze</a>
-      <a href="#klanten">Klanten</a>
-      <a href="#over">Over</a>
-      <a class="btn btn-small" href="#contact">Contact</a>
-    </nav>
-  </div>
+<header class="bar">
+  <a class="mark" href="#top" aria-label="studio andere koek, naar boven">
+    <img src="img/kolibrie.svg" alt="" width="32" height="31">
+    <span>studio andere koek</span>
+  </a>
+  <nav class="bar-nav" aria-label="Hoofdmenu">
+    <a href="#diensten">Diensten</a>
+    <a href="#werkwijze">Werkwijze</a>
+    <a href="#klanten">Klanten</a>
+    <a href="#over">Over</a>
+    <a class="button button-small" href="#contact">Contact</a>
+  </nav>
 </header>
 
 <main id="main">
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <p class="eyebrow">Software-ontwikkeling · Groningen</p>
-        <h1>Vakmanschap.<br><span class="accent">Agentic werkwijze.</span></h1>
-        <p class="lead">
-          Studio andere koek bouwt webapplicaties, platforms en koppelingen, samen met AI-agents.
-          Wij ontwerpen, sturen en reviewen; de agents nemen het zware werk over. Zo krijg je sneller resultaat, zonder in te leveren op kwaliteit.
-        </p>
-        <div class="actions">
-          <a class="btn" href="#contact">Plan een kennismaking</a>
-          <a class="btn btn-ghost" href="#werkwijze">Hoe we werken</a>
-        </div>
-      </div>
-
-      <figure class="terminal" aria-label="Voorbeeld van een agentic werksessie">
-        <div class="terminal-bar" aria-hidden="true"><span></span><span></span><span></span></div>
-        <ol class="terminal-body" id="terminal">
-          <li class="t-cmd">plan: koppeling voorraad → webshop</li>
-          <li class="t-done">specificatie afgestemd met klant</li>
-          <li class="t-run">agent 1 · API-client + tests</li>
-          <li class="t-run">agent 2 · synchronisatie-job</li>
-          <li class="t-run">agent 3 · beheerscherm</li>
-          <li class="t-done">menselijke review · alle tests groen</li>
-          <li class="t-ship">klaar voor livegang</li>
-        </ol>
-      </figure>
+  <!-- HERO: de naam van de studio is de zin; de kolibrie zit erin als een woord -->
+  <section class="hero" aria-labelledby="hero-title">
+    <h1 class="sentence" id="hero-title">
+      <span class="line"><span data-line style="--i:0">Software bouwen is <span class="perch perch-word" data-perch data-fit aria-hidden="true"></span></span></span>
+      <span class="line"><span data-line style="--i:1"><span class="kleuren"><span>a</span><span>n</span><span>d</span><span>e</span><span>r</span><span>e</span></span> koek.</span></span>
+    </h1>
+    <p class="lead" data-load style="--d:420ms">
+      Studio andere koek in Groningen bouwt websites, webapplicaties, apps en koppelingen met AI-agents.
+      Wij ontwerpen, sturen en reviewen; de agents doen het zware werk.
+    </p>
+    <div class="actions" data-load style="--d:520ms">
+      <a class="button" href="#contact">Plan een kennismaking</a>
+      <a class="link" href="#werkwijze">Zo werken we</a>
     </div>
   </section>
 
   <!-- DIENSTEN -->
-  <section class="section" id="diensten">
-    <div class="wrap">
-      <p class="eyebrow">Diensten</p>
-      <h2>Wat we voor je doen</h2>
-      <div class="grid grid-2">
-        <article class="card">
-          <h3>Maatwerk software</h3>
-          <p>Webapplicaties, platforms en interne tools, van datamodel tot interface. Ook bestaande software overnemen, moderniseren en verder brengen. We werken onder andere met Python, PHP, Rust, React, Vue, MySQL en MongoDB.</p>
-        </article>
-        <article class="card">
-          <h3>Data en koppelingen</h3>
-          <p>API's, integraties tussen systemen en het verzamelen en verwerken van data op schaal. Betrouwbaar, gemonitord en goed gedocumenteerd.</p>
-        </article>
-        <article class="card card-ai">
-          <span class="chip">AI</span>
-          <h3>Agentic development voor teams</h3>
-          <p>Wil je team zelf sneller bouwen met AI-agents? Wij helpen met inrichten: tooling, werkafspraken, reviewstappen en de context die agents nodig hebben om goed werk te leveren in jullie codebase.</p>
-        </article>
-        <article class="card card-ai">
-          <span class="chip">AI</span>
-          <h3>AI in je product en processen</h3>
-          <p>Je eigen systemen beschikbaar maken voor AI-assistenten, bijvoorbeeld via MCP, of slimme functies toevoegen aan je applicatie. Praktisch, veilig en met de mens aan het stuur.</p>
-        </article>
-      </div>
+  <section class="section section-alt" id="diensten" aria-labelledby="diensten-title">
+    <div class="section-head">
+      <h2 id="diensten-title" data-reveal>Wat we voor je doen</h2>
+      <span class="perch perch-head" data-perch aria-hidden="true"></span>
+    </div>
+    <div class="section-body services">
+      <article class="service" data-reveal>
+        <div class="service-art"><svg viewBox="42.0 12.0 116.0 130.0" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><g class="a-layer a-layer1"><polygon fill="#347991" points="44,100 100,130 100,140 44,110"/><polygon fill="#266074" points="156,100 100,130 100,140 156,110"/><polygon fill="#42aac8" points="100,70 156,100 100,130 44,100"/></g><g class="a-layer a-layer2"><polygon fill="#f68d14" points="44,72 100,102 100,112 44,82"/><polygon fill="#ef2f33" points="156,72 100,102 100,112 156,82"/><polygon fill="#f9cb0a" points="100,42 156,72 100,102 44,72"/></g><g class="a-layer a-layer3"><polygon style="fill:var(--art-shade)" points="44,44 100,74 100,84 44,54"/><polygon style="fill:var(--art-dark)" points="156,44 100,74 100,84 156,54"/><polygon style="fill:var(--art-light)" points="100,14 156,44 100,74 44,44"/></g><g class="a-layer a-layer3"><polygon fill="#42aac8" points="88,38 104,30 116,36 100,44"/></g></svg><span class="perch perch-art" data-perch aria-hidden="true"></span></div>
+        <div class="service-text">
+        <h3>Maatwerksoftware</h3>
+        <p>Websites, webapplicaties, platforms en interne tools, van datamodel tot interface. Ook bestaande software overnemen, moderniseren en verder brengen. We werken onder andere met Python, PHP, Rust, React, Vue, MySQL en MongoDB.</p>
+        </div>
+      </article>
+      <article class="service" data-reveal>
+        <div class="service-art"><svg viewBox="51.5 7.8 97.0 136.4" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><polygon fill="#347991" points="53.5,25.8 117.5,9.8 82.5,142.2"/><polygon fill="#266074" points="117.5,9.8 146.5,126.2 82.5,142.2"/><polygon style="fill:var(--art-light)" points="61.9,37 114.3,23.9 138.1,119 85.7,132.1"/><g class="a-tile a-tile1"><polygon fill="#f9cb0a" points="71.4,46 86.9,42.1 75.3,61.5"/><polygon fill="#f68d14" points="86.9,42.1 90.8,57.6 75.3,61.5"/></g><g class="a-tile a-tile2"><polygon fill="#42aac8" points="94.7,40.2 110.2,36.3 98.6,55.7"/><polygon fill="#347991" points="110.2,36.3 114.1,51.8 98.6,55.7"/></g><g class="a-tile a-tile3"><polygon fill="#d41452" points="77.2,69.3 92.7,65.4 81.1,84.8"/><polygon fill="#a21846" points="92.7,65.4 96.6,80.9 81.1,84.8"/></g><g class="a-tile a-tile4"><polygon fill="#f68d14" points="100.5,63.4 116,59.6 104.4,79"/><polygon fill="#f9cb0a" points="116,59.6 119.9,75.1 104.4,79"/></g><polygon fill="#266074" points="99.5,117.3 118.9,112.5 119.6,115.4 100.2,120.2"/></svg><span class="perch perch-art" data-perch aria-hidden="true"></span></div>
+        <div class="service-text">
+        <h3>Apps voor telefoon en tablet</h3>
+        <p>Apps voor iOS en Android, gekoppeld aan je eigen systemen en data. Van eerste versie tot publicatie in de App Store en Google Play.</p>
+        </div>
+      </article>
+      <article class="service" data-reveal>
+        <div class="service-art"><svg viewBox="22.0 18.0 160.0 104.0" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><g class="a-links"><polygon fill="#347991" points="48.4,100.5 106.4,44.5 101.6,39.5 43.6,95.5"/><polygon fill="#266074" points="101.5,44.5 155.5,98.5 160.5,93.5 106.5,39.5"/><polygon fill="#24505a" points="46.1,101.5 158.1,99.5 157.9,92.5 45.9,94.5"/></g><g class="a-nodes"><polygon fill="#f9cb0a" points="46,76 68,98 24,98"/><polygon fill="#f68d14" points="24,98 68,98 46,120"/><polygon fill="#42aac8" points="104,20 126,42 82,42"/><polygon fill="#347991" points="82,42 126,42 104,64"/><polygon style="fill:var(--art-light)" points="158,74 180,96 136,96"/><polygon style="fill:var(--art-dark)" points="136,96 180,96 158,118"/></g></svg><span class="perch perch-art" data-perch aria-hidden="true"></span></div>
+        <div class="service-text">
+        <h3>Data en koppelingen</h3>
+        <p>API’s, integraties tussen systemen en het verzamelen en verwerken van data op schaal. Betrouwbaar, gemonitord en goed gedocumenteerd.</p>
+        </div>
+      </article>
+      <article class="service" data-reveal>
+        <div class="service-art"><svg viewBox="35.1 15.3 135.3 121.0" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><g class="a-bird a-bird1" transform="translate(104 16) scale(2.0)"><polygon fill="#f68d14" points="17.71,14.93 20.75,11.82 24.39,13.87"/><polygon fill="#e8e8e7" points="22.55,22.96 17.71,14.93 21.65,18.05"/><polygon fill="#ef2f33" points="24.39,13.87 20.75,11.82 26.45,11.81"/><polygon fill="#f9cb0a" points="21.65,18.05 17.72,14.93 24.39,13.87"/><polygon fill="#d41452" points="22.48,9.66 31.5,11.81 20.75,11.82"/><polygon fill="#a21846" points="22.48,9.66 26.99,10.73 24.39,8.9"/><polygon fill="#347991" points="17.71,14.93 0.66,0.66 20.75,11.82"/><polygon fill="#24505a" points="17.71,14.93 10.05,8.52 14.39,14.13"/><polygon fill="#42abc8" points="17.71,5.64 20.75,11.82 17.71,10.14"/><polygon fill="#266174" points="17.71,5.64 11.68,0.66 17.71,10.14"/><polygon fill="#266174" points="17.71,14.93 17.71,26.84 20.15,23.18"/><polygon fill="#42abc8" points="17.71,14.93 20.15,23.18 26.93,30.23"/><polygon fill="#24505a" points="15.69,21.38 17.71,21.01 17.71,14.93"/></g><g class="a-bird a-bird2" transform="translate(36 52) scale(1.6)"><polygon fill="#f68d14" points="17.71,14.93 20.75,11.82 24.39,13.87"/><polygon fill="#e8e8e7" points="22.55,22.96 17.71,14.93 21.65,18.05"/><polygon fill="#ef2f33" points="24.39,13.87 20.75,11.82 26.45,11.81"/><polygon fill="#f9cb0a" points="21.65,18.05 17.72,14.93 24.39,13.87"/><polygon fill="#d41452" points="22.48,9.66 31.5,11.81 20.75,11.82"/><polygon fill="#a21846" points="22.48,9.66 26.99,10.73 24.39,8.9"/><polygon fill="#347991" points="17.71,14.93 0.66,0.66 20.75,11.82"/><polygon fill="#24505a" points="17.71,14.93 10.05,8.52 14.39,14.13"/><polygon fill="#42abc8" points="17.71,5.64 20.75,11.82 17.71,10.14"/><polygon fill="#266174" points="17.71,5.64 11.68,0.66 17.71,10.14"/><polygon fill="#266174" points="17.71,14.93 17.71,26.84 20.15,23.18"/><polygon fill="#42abc8" points="17.71,14.93 20.15,23.18 26.93,30.23"/><polygon fill="#24505a" points="15.69,21.38 17.71,21.01 17.71,14.93"/></g><g class="a-bird a-bird3" transform="translate(118 86) scale(1.6)"><polygon fill="#f68d14" points="17.71,14.93 20.75,11.82 24.39,13.87"/><polygon fill="#e8e8e7" points="22.55,22.96 17.71,14.93 21.65,18.05"/><polygon fill="#ef2f33" points="24.39,13.87 20.75,11.82 26.45,11.81"/><polygon fill="#f9cb0a" points="21.65,18.05 17.72,14.93 24.39,13.87"/><polygon fill="#d41452" points="22.48,9.66 31.5,11.81 20.75,11.82"/><polygon fill="#a21846" points="22.48,9.66 26.99,10.73 24.39,8.9"/><polygon fill="#347991" points="17.71,14.93 0.66,0.66 20.75,11.82"/><polygon fill="#24505a" points="17.71,14.93 10.05,8.52 14.39,14.13"/><polygon fill="#42abc8" points="17.71,5.64 20.75,11.82 17.71,10.14"/><polygon fill="#266174" points="17.71,5.64 11.68,0.66 17.71,10.14"/><polygon fill="#266174" points="17.71,14.93 17.71,26.84 20.15,23.18"/><polygon fill="#42abc8" points="17.71,14.93 20.15,23.18 26.93,30.23"/><polygon fill="#24505a" points="15.69,21.38 17.71,21.01 17.71,14.93"/></g></svg><span class="perch perch-art" data-perch aria-hidden="true"></span></div>
+        <div class="service-text">
+        <h3>Agentic development voor teams</h3>
+        <p>Wil je team zelf sneller bouwen met AI-agents? We helpen je team met inrichten: tooling, werkafspraken, reviewstappen en de context die agents nodig hebben om goed werk te leveren in jullie codebase.</p>
+        </div>
+      </article>
+      <article class="service" data-reveal>
+        <div class="service-art"><svg viewBox="51.0 6.0 105.0 142.0" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><g class="a-block"><polygon fill="#347991" points="56,92 100,116 100,146 56,122"/><polygon fill="#266074" points="144,92 100,116 100,146 144,122"/><polygon fill="#42aac8" points="100,68 144,92 100,116 56,92"/></g><g class="a-star"><polygon fill="#f9cb0a" points="100,40 93.6,33.6 100,8"/><polygon fill="#f68d14" points="100,40 100,8 106.4,33.6"/><polygon fill="#f68d14" points="100,40 106.4,33.6 132,40"/><polygon fill="#f9cb0a" points="100,40 132,40 106.4,46.4"/><polygon fill="#f9cb0a" points="100,40 106.4,46.4 100,72"/><polygon fill="#f68d14" points="100,40 100,72 93.6,46.4"/><polygon fill="#f68d14" points="100,40 93.6,46.4 68,40"/><polygon fill="#f9cb0a" points="100,40 68,40 93.6,33.6"/></g><g class="a-spark"><polygon fill="#d41452" points="150,26 154,34 150,42 146,34"/><polygon fill="#42aac8" points="56,52 59,57 56,62 53,57"/></g></svg><span class="perch perch-art" data-perch aria-hidden="true"></span></div>
+        <div class="service-text">
+        <h3>AI in je product en processen</h3>
+        <p>Je eigen systemen beschikbaar maken voor AI-assistenten, bijvoorbeeld via MCP, of slimme functies toevoegen aan je applicatie. Praktisch, veilig en met de mens aan het stuur.</p>
+        </div>
+      </article>
+      <article class="service" data-reveal>
+        <div class="service-art"><svg viewBox="34.5 18.3 131.6 111.2" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><g class="a-wrench"><polygon fill="#42aac8" points="41.1,111.7 116.7,52.6 121.6,58.9 46,118"/><polygon fill="#347991" points="46,118 121.6,58.9 126.6,65.2 50.9,124.3"/><polygon fill="#f9cb0a" points="116.9,62.6 108.3,51.6 113.5,32.3 132.1,20.3 151.7,22.7 134.7,39.8 139,45.4"/><polygon fill="#f68d14" points="116.9,62.6 139,45.4 143.3,50.9 164.1,38.5 161.6,58.1 145.5,73.2 125.5,73.6"/><polygon fill="#266074" points="36.5,125.4 38.6,108.5 55.5,110.6 53.4,127.5"/></g></svg><span class="perch perch-art" data-perch aria-hidden="true"></span></div>
+        <div class="service-text">
+        <h3>Onderhoud en support</h3>
+        <p>We houden je software veilig, snel en up&#8209;to&#8209;date: updates, monitoring en hulp als er iets misgaat of anders moet. Ook voor software die niet door ons is gebouwd.</p>
+        </div>
+      </article>
     </div>
   </section>
 
-  <!-- WERKWIJZE -->
-  <section class="section section-alt" id="werkwijze">
-    <div class="wrap">
-      <p class="eyebrow">Werkwijze</p>
-      <h2>Zo ziet agentic werken eruit</h2>
-      <p class="intro">
-        Agentic development betekent dat AI-agents, zoals Claude Code, zelfstandig taken uitvoeren: code schrijven, tests
-        draaien, documentatie bijwerken. Niet als gimmick, maar als vast onderdeel van het werk.
-        Het verschil zit in de regie: die blijft altijd bij een ervaren developer.
+  <!-- WERKWIJZE: vier stappen, elk met een origami-illustratie in de kleuren van het logo -->
+  <section class="section band-dark" id="werkwijze" aria-labelledby="werkwijze-title">
+    <div class="section-head">
+      <h2 id="werkwijze-title" data-reveal>Zo werken we</h2>
+    </div>
+    <div class="section-body">
+      <p class="statement" data-reveal>
+        Bij agentic development voeren AI-agents zoals Claude Code zelfstandig taken uit: code schrijven,
+        tests draaien, documentatie bijwerken. De regie blijft altijd bij een ervaren developer.
       </p>
-
-      <div class="process">
-        <ol class="steps">
-          <li>
-            <span class="step-no">01</span>
-            <h3>Scherp krijgen</h3>
-            <p>We bepalen samen wat er gebouwd moet worden. Wij vertalen dat naar een concreet plan met een heldere afbakening.</p>
-          </li>
-          <li>
-            <span class="step-no">02</span>
-            <h3>Agents aan het werk</h3>
-            <p>Agents voeren afgebakende taken uit, vaak meerdere tegelijk. Wij maken de ontwerpkeuzes en bewaken de architectuur.</p>
-          </li>
-          <li>
-            <span class="step-no">03</span>
-            <h3>Review en tests</h3>
-            <p>Elke wijziging wordt door ons gereviewd en automatisch getest voordat hij live gaat. Geen code die niemand begrijpt.</p>
-          </li>
-          <li>
-            <span class="step-no">04</span>
-            <h3>Opleveren</h3>
-            <p>Je krijgt werkende software, broncode en documentatie. Alles blijft van jou, zonder lock-in.</p>
-          </li>
-        </ol>
-
-        <aside class="benefits">
-          <h3>Wat levert het je op?</h3>
-          <ul>
-            <li>Kortere doorlooptijd</li>
-            <li>Meer gebouwd binnen hetzelfde budget</li>
-            <li>Kwaliteit geborgd door review en tests</li>
-            <li>Eén aanspreekpunt dat het hele systeem overziet</li>
-          </ul>
-        </aside>
+    </div>
+    <ol class="steps">
+      <li class="step" data-reveal>
+        <div class="step-art" data-art><svg viewBox="28.0 28.0 152.0 104.0" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><polygon style="fill:var(--art-light)" points="30,42 72,30 72,118 30,130"/><polygon style="fill:var(--art-shade)" points="72,30 114,42 114,130 72,118"/><polygon style="fill:var(--art-light)" points="114,42 156,30 156,118 114,130"/><polygon style="fill:var(--art-shade)" points="156,30 178,36 178,124 156,118"/><polyline class="a-route" points="44,110 64,86 92,98 108,70 134,80 160,56" fill="none" stroke="#f9cb0a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/><polygon fill="#f68d14" points="44,103 51,110 44,117 37,110"/><g class="a-pin"><polygon fill="#d41452" points="150,32 170,32 160,56"/><polygon fill="#a21846" points="150,32 160,32 160,56"/></g></svg><span class="perch perch-art" data-perch aria-hidden="true"></span></div>
+        <h3>Plannen</h3>
+        <p>We bepalen samen wat er gebouwd moet worden: jij kent je vakgebied, wij de techniek. We adviseren over de beste aanpak en vertalen dat naar een concreet plan met een heldere afbakening.</p>
+      </li>
+      <li class="step" data-reveal>
+        <div class="step-art" data-art><svg viewBox="52.0 19.0 94.0 123.0" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><polygon fill="#347991" points="54,72 84,89 84,123 54,106"/><polygon fill="#266074" points="114,72 84,89 84,123 114,106"/><polygon fill="#42aac8" points="84,55 114,72 84,89 54,72"/><g class="a-drop"><polygon fill="#f68d14" points="54,38 84,55 84,89 54,72"/><polygon fill="#ef2f33" points="114,38 84,55 84,89 114,72"/><polygon fill="#f9cb0a" points="84,21 114,38 84,55 54,38"/></g><polygon style="fill:var(--art-shade)" points="84,89 114,106 114,140 84,123"/><polygon style="fill:var(--art-dark)" points="144,89 114,106 114,140 144,123"/><polygon style="fill:var(--art-light)" points="114,72 144,89 114,106 84,89"/></svg></div>
+        <h3>Bouwen</h3>
+        <p>Agents voeren afgebakende taken uit, vaak meerdere tegelijk. Wij maken de ontwerpkeuzes en bewaken de architectuur.</p>
+      </li>
+      <li class="step" data-reveal>
+        <div class="step-art" data-art><svg viewBox="33.5 17.5 141.0 105.0" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><g class="a-arm1"><polygon fill="#42aac8" points="52.5,67.5 88.5,103.5 80,112 44,76"/><polygon fill="#266074" points="44,76 80,112 71.5,120.5 35.5,84.5"/></g><g class="a-arm2"><polygon fill="#f9cb0a" points="71.5,103.5 155.5,19.5 164,28 80,112"/><polygon fill="#f68d14" points="80,112 164,28 172.5,36.5 88.5,120.5"/></g></svg></div>
+        <h3>Reviewen</h3>
+        <p>Elke wijziging reviewen we en testen we automatisch voordat die live gaat. Geen code die niemand begrijpt.</p>
+      </li>
+      <li class="step" data-reveal>
+        <div class="step-art" data-art><svg viewBox="2.0 32.0 176.0 90.0" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><g class="a-plane"><polygon style="fill:var(--art-shade)" points="176,34 30,58 94,82"/><polygon fill="#347991" points="176,34 94,82 110,102"/><polygon fill="#266074" points="94,82 50,114 110,102"/><polygon style="fill:var(--art-light)" points="176,34 94,82 50,114"/></g><line class="a-trail" x1="10" y1="90" x2="32" y2="90" stroke="#f9cb0a" stroke-width="4" stroke-linecap="round"/><line class="a-trail" x1="18" y1="104" x2="42" y2="104" stroke="#f9cb0a" stroke-width="4" stroke-linecap="round"/><line class="a-trail" x1="6" y1="118" x2="24" y2="118" stroke="#f9cb0a" stroke-width="4" stroke-linecap="round"/></svg><span class="perch perch-art" data-perch data-flip="-1" aria-hidden="true"></span></div>
+        <h3>Opleveren</h3>
+        <p>Je krijgt werkende software, broncode en documentatie. Alles blijft van jou, zonder lock-in. Daarna houden we je software graag veilig en up&#8209;to&#8209;date.</p>
+      </li>
+    </ol>
+    <div class="gains">
+      <div class="gains-head">
+        <h3 class="gains-title" data-reveal>Wat levert het je op?</h3>
+        <span class="perch perch-head" data-perch aria-hidden="true"></span>
       </div>
+      <ul class="gains-list">
+        <li data-reveal>Kortere doorlooptijd</li>
+        <li data-reveal>Meer gebouwd binnen hetzelfde budget</li>
+        <li data-reveal>Kwaliteit geborgd door review en tests</li>
+        <li data-reveal>Eén aanspreekpunt dat het hele systeem overziet</li>
+        <li data-reveal>Snel een werkend prototype om op te reageren</li>
+        <li data-reveal>Documentatie en tests die meegroeien met de code</li>
+      </ul>
     </div>
   </section>
 
-  <!-- KLANTEN -->
-  <section class="section" id="klanten">
-    <div class="wrap">
-      <p class="eyebrow">Klanten</p>
-      <h2>Voor wie we werken</h2>
-      <ul class="logos">
-        <li>
-          <a href="https://www.helloprint.com/" rel="noopener">
-            <img src="img/clients/helloprint.svg" alt="HelloPrint" width="132" height="32">
-          </a>
+  <!-- KLANTEN: compacte gouden strook, per klant het logo en wat we bouwden -->
+  <section class="section section-alt section-compact" id="klanten" aria-labelledby="klanten-title">
+    <div class="section-head">
+      <h2 id="klanten-title" data-reveal>Voor wie we werken</h2>
+    </div>
+    <div class="section-body">
+      <ul class="clients" data-reveal>
+        <li class="client">
+          <a href="https://www.helloprint.com/" rel="noopener"><img class="logo-helloprint" src="img/clients/helloprint.svg" alt="HelloPrint" width="132" height="32"></a>
+          <p>Software voor prijsbepaling op basis van concurrentiedata.</p>
         </li>
-        <li>
-          <a href="https://waarkstee.nl/" rel="noopener">
-            <img src="img/clients/waarkstee.svg" alt="Waarkstee" width="635" height="238">
-          </a>
+        <li class="client">
+          <a href="https://waarkstee.nl/" rel="noopener"><img class="logo-waarkstee" src="img/clients/waarkstee.svg" alt="Waarkstee" width="635" height="238"></a>
+          <p>Website voor de coworking space aan de Nieuweweg.</p>
         </li>
-        <li>
-          <a href="https://lamezza.nl/" rel="noopener">
-            <img class="logo-tall" src="img/clients/lamezza.png" alt="La Mezza" width="150" height="110">
-          </a>
+        <li class="client">
+          <a href="https://lamezza.nl/" rel="noopener"><img class="logo-lamezza" src="img/clients/lamezza.png" alt="La Mezza" width="103" height="91"></a>
+          <p>Onderhoud en doorontwikkeling van de website.</p>
+        </li>
+        <li class="client">
+          <a href="https://play.google.com/store/apps/details?id=com.studioanderekoek.fitgaaf" rel="noopener"><img class="logo-fitgaaf" src="img/clients/fitgaaf.png" alt="FitGaaf!" width="192" height="192"></a>
+          <p>App die kinderen en ouders met minigames en stickers speels helpt gezond te leven.</p>
         </li>
       </ul>
     </div>
   </section>
 
   <!-- OVER -->
-  <section class="section section-alt" id="over">
-    <div class="wrap about">
-      <div>
-        <p class="eyebrow">Over</p>
-        <h2>Kort lijntje, geen tussenlagen</h2>
-        <p>
-          Achter studio andere koek in Groningen staat Tim van der Putten, full-stack developer.
-          Bij ons praat je direct met degene die het bouwt: geen accountmanagers of
-          overdrachtsmomenten.
-        </p>
-        <p>
-          Software bouwen is de afgelopen jaren echt andere koek geworden. Wij zitten daar graag
-          middenin, en zetten die nieuwe manier van werken in voor onze opdrachtgevers.
-        </p>
-        <p>
-          Waar een project om meer handen of andere expertise vraagt, werken we samen met
-          onze partners <a href="https://bitserve.nl/" rel="noopener">Bitserve</a> en
-          <a href="https://roordaict.nl/" rel="noopener">Roorda ICT</a>.
-        </p>
-      </div>
-      <aside class="about-partners" aria-labelledby="partners-title">
-        <h3 class="partners-title" id="partners-title">Partners</h3>
-        <ul class="logos logos-partners">
-          <li>
-            <a href="https://bitserve.nl/" rel="noopener">
-              <img src="img/partners/bitserve.svg" alt="Bitserve" width="487" height="72">
-            </a>
-          </li>
-          <li>
-            <a href="https://roordaict.nl/" rel="noopener">
-              <img src="img/partners/roorda-ict.png" alt="Roorda ICT" width="357" height="80">
-            </a>
-          </li>
-        </ul>
-      </aside>
+  <section class="section" id="over" aria-labelledby="over-title">
+    <div class="section-head">
+      <h2 id="over-title" data-reveal>Wie we zijn</h2>
+    </div>
+    <div class="section-body">
+      <p class="bio" data-reveal><strong>Tim van der Putten</strong> is de full-stack developer achter studio andere koek. Je praat direct met degene die het bouwt: geen accountmanagers, geen overdrachtsmomenten.</p>
+      <p data-reveal>Software bouwen is de afgelopen jaren echt andere koek geworden. Wij zitten daar graag middenin en zetten die nieuwe manier van werken in voor onze opdrachtgevers. Waar een project om meer handen of andere expertise vraagt, werken we samen met verschillende partners.</p>
+      <ul class="logos logos-small" aria-label="Partners" data-reveal>
+        <li><a href="https://bitserve.nl/" rel="noopener"><img src="img/partners/bitserve.svg" alt="Bitserve" width="487" height="72"></a></li>
+        <li><a href="https://roordaict.nl/" rel="noopener"><img src="img/partners/roorda-ict.png" alt="Roorda ICT" width="357" height="80"></a></li>
+      </ul>
+      <span class="perch perch-end" data-perch data-flip="-1" aria-hidden="true"></span>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section class="section" id="contact">
-    <div class="wrap contact">
-      <div>
-        <p class="eyebrow">Contact</p>
-        <h2>Laten we kennismaken</h2>
-        <p>Vertel kort waar je mee bezig bent, dan nemen we zo snel mogelijk contact met je op.</p>
-        <dl class="details">
-          <dt>E-mail</dt>
-          <dd><a href="mailto:info@studioanderekoek.nl">info@studioanderekoek.nl</a></dd>
-          <dt>Bezoekadres</dt>
-          <dd>Nieuweweg 16<br>9711 TD Groningen<br>Op afspraak</dd>
-        </dl>
+  <section class="section section-alt" id="contact" aria-labelledby="contact-title">
+    <div class="section-head">
+      <h2 id="contact-title" data-reveal>Laten we kennismaken</h2>
+      <p class="contact-intro" data-reveal>Vertel kort waar je mee bezig bent, dan nemen we zo snel mogelijk contact met je op.</p>
+      <dl class="details" data-reveal>
+        <dt>E-mail</dt>
+        <dd><a href="mailto:info@studioanderekoek.nl">info@studioanderekoek.nl</a></dd>
+        <dt>Bezoekadres</dt>
+        <dd>Nieuweweg 16<br>9711 TD Groningen<br>Op afspraak</dd>
+      </dl>
+    </div>
+    <div class="section-body">
+    <!-- Formulier via Web3Forms: deze access_key is gekoppeld aan tim@studioanderekoek.nl en mag publiek zijn -->
+    <form class="form" id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate data-reveal>
+      <span class="perch perch-form" data-perch data-flip="-1" aria-hidden="true"></span>
+      <input type="hidden" name="access_key" value="f7325b31-dae9-4327-af6a-4edb7e2ba346">
+      <input type="hidden" name="subject" value="Nieuw bericht via studioanderekoek.nl">
+      <input type="hidden" name="from_name" value="studioanderekoek.nl">
+      <!-- Honeypot: onzichtbaar voor bezoekers; bots vullen het in en worden dan geweigerd -->
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <div class="field">
+        <label for="f-name">Naam</label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required>
+        <p class="error" id="f-name-error"></p>
       </div>
-
-      <!-- Formulier via Web3Forms: deze access_key is gekoppeld aan tim@studioanderekoek.nl en mag publiek zijn -->
-      <form class="form" id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
-        <input type="hidden" name="access_key" value="f7325b31-dae9-4327-af6a-4edb7e2ba346">
-        <input type="hidden" name="subject" value="Nieuw bericht via studioanderekoek.nl">
-        <input type="hidden" name="from_name" value="studioanderekoek.nl">
-        <!-- Honeypot: onzichtbaar voor bezoekers; bots vullen het in en worden dan geweigerd -->
-        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-        <div class="field">
-          <label for="f-name">Naam</label>
-          <input id="f-name" name="name" type="text" autocomplete="name" required>
-          <p class="error" id="f-name-error"></p>
-        </div>
-        <div class="field">
-          <label for="f-email">E-mailadres</label>
-          <input id="f-email" name="email" type="email" autocomplete="email" required>
-          <p class="error" id="f-email-error"></p>
-        </div>
-        <div class="field">
-          <label for="f-message">Bericht</label>
-          <textarea id="f-message" name="message" rows="6" required></textarea>
-          <p class="error" id="f-message-error"></p>
-        </div>
-        <div class="form-foot">
-          <button class="btn" type="submit">Bericht versturen</button>
-          <small>We gebruiken je gegevens alleen om je te antwoorden.</small>
-        </div>
-        <p class="form-status" role="status" aria-live="polite"></p>
-      </form>
+      <div class="field">
+        <label for="f-email">E-mailadres</label>
+        <input id="f-email" name="email" type="email" autocomplete="email" required>
+        <p class="error" id="f-email-error"></p>
+      </div>
+      <div class="field">
+        <label for="f-message">Bericht</label>
+        <textarea id="f-message" name="message" rows="6" required></textarea>
+        <p class="error" id="f-message-error"></p>
+      </div>
+      <div class="form-foot">
+        <button class="button" type="submit">Bericht versturen</button>
+        <small>We gebruiken je gegevens alleen om op je bericht te reageren.</small>
+      </div>
+      <p class="form-status" role="status" aria-live="polite"></p>
+    </form>
     </div>
   </section>
 
 </main>
 
-<footer class="site-footer">
-  <div class="wrap footer-row">
-    <span>&copy; <span id="year">2026</span> studio andere koek · Groningen</span>
+<footer class="close">
+  <div class="close-top">
+    <h2 class="invite" data-reveal>Zin in andere koek?</h2>
+    <a class="button button-ink" href="mailto:info@studioanderekoek.nl" data-reveal>Mail ons</a>
+    <span class="perch perch-close" data-perch aria-hidden="true"></span>
+  </div>
+  <nav class="close-nav" aria-label="Menu onderaan">
+    <a href="#diensten">Diensten</a>
+    <a href="#werkwijze">Werkwijze</a>
+    <a href="#klanten">Klanten</a>
+    <a href="#over">Over</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="close-legal">
+    <span>&copy; <span id="year">2026</span> studio andere koek</span>
     <span>KvK 02089436</span>
     <a href="mailto:info@studioanderekoek.nl">info@studioanderekoek.nl</a>
   </div>
 </footer>
 
+<!-- De kolibrie uit het logo (js/main.js): blijft zitten tijdens scrollen en vliegt daarna naar een plek in beeld. -->
+<div class="bird" aria-hidden="true"><div class="bird-flip"><div class="bird-bob"><svg viewBox="0 0 32 31">
+  <g class="b-body"><polygon fill="#f68d14" points="17.71,14.93 20.75,11.82 24.39,13.87"/><polygon fill="#e8e8e7" points="22.55,22.96 17.71,14.93 21.65,18.05"/><polygon fill="#ef2f33" points="24.39,13.87 20.75,11.82 26.45,11.81"/><polygon fill="#f9cb0a" points="21.65,18.05 17.72,14.93 24.39,13.87"/><polygon fill="#d41452" points="22.48,9.66 31.5,11.81 20.75,11.82"/><polygon fill="#a21846" points="22.48,9.66 26.99,10.73 24.39,8.9"/></g>
+  <g class="b-wing b-wing-front"><polygon fill="#347991" points="17.71,14.93 0.66,0.66 20.75,11.82"/><polygon fill="#24505a" points="17.71,14.93 10.05,8.52 14.39,14.13"/></g>
+  <g class="b-wing b-wing-back"><polygon fill="#42abc8" points="17.71,5.64 20.75,11.82 17.71,10.14"/><polygon fill="#266174" points="17.71,5.64 11.68,0.66 17.71,10.14"/></g>
+  <g class="b-tail"><polygon fill="#266174" points="17.71,14.93 17.71,26.84 20.15,23.18"/><polygon fill="#42abc8" points="17.71,14.93 20.15,23.18 26.93,30.23"/><polygon fill="#24505a" points="15.69,21.38 17.71,21.01 17.71,14.93"/></g>
+</svg></div></div></div>
 <script src="js/main.js" defer></script>
+<!-- TIJDELIJK: versiekeuze, verwijderen vóór lancering -->
+<script src="versiebalk.js" defer></script>
 <!-- Bezoekersteller: GoatCounter (cookievrij, geen banner nodig). Telt niet op localhost. -->
 <script data-goatcounter="https://studioanderekoek.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 
