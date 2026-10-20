@@ -179,12 +179,6 @@ p { margin: 0 0 1em; }
 .logos-partners li > * { height: 96px; }
 .logos-partners img { width: 140px; }
 
-.subhead { margin-top: 56px; }
-.tags { list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
-.tags li {
-  padding: 7px 14px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line);
-  font-size: .92rem; font-weight: 550;
-}
 
 /* Over */
 .about { display: grid; grid-template-columns: 280px 1fr; gap: 56px; align-items: center; }
