@@ -1,7 +1,7 @@
 // Jaartal in de footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Randje onder de header zodra je scrolt
+// Schaduw onder de header zodra hij boven de inhoud zweeft
 (function () {
   var header = document.querySelector('.site-header');
   function update() { header.classList.toggle('is-scrolled', window.scrollY > 8); }
@@ -30,6 +30,28 @@ document.getElementById('year').textContent = new Date().getFullYear();
       li.classList.add('is-in');
     }, delay);
   });
+})();
+
+// Binnenkomst: elementen met data-reveal verschijnen eenmalig als ze in beeld komen. Wat tegelijk
+// in beeld komt verschijnt 70ms na elkaar, in leesvolgorde. Zonder JS of IntersectionObserver staat alles gewoon in beeld.
+(function () {
+  var items = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
+  if (!('IntersectionObserver' in window)) {
+    document.documentElement.classList.remove('js');
+    return;
+  }
+  var observer = new IntersectionObserver(function (entries) {
+    entries
+      .filter(function (entry) { return entry.isIntersecting; })
+      .sort(function (a, b) { return items.indexOf(a.target) - items.indexOf(b.target); })
+      .forEach(function (entry, i) {
+        entry.target.style.setProperty('--reveal-delay', Math.min(i, 5) * 70 + 'ms');
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+  }, { rootMargin: '0px 0px -10% 0px' });
+  items.forEach(function (el) { observer.observe(el); });
+  window.revealReady = true;
 })();
 
 // GoatCounter-event tellen (doet niets als de teller niet geladen is, bijv. lokaal)
@@ -101,21 +123,4 @@ document.addEventListener('click', function (e) {
         button.disabled = false;
       });
   });
-})();
-
-// Placeholders: knop linksonder die naar de volgende nog-in-te-vullen tekst springt.
-// Verdwijnt vanzelf zodra er geen <mark class="todo"> meer in de pagina staat.
-(function () {
-  var todos = document.querySelectorAll('mark.todo');
-  if (!todos.length) return;
-  var index = -1;
-  var pill = document.createElement('button');
-  pill.type = 'button';
-  pill.className = 'todo-pill';
-  pill.textContent = todos.length + ' placeholders · volgende';
-  pill.addEventListener('click', function () {
-    index = (index + 1) % todos.length;
-    todos[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
-  });
-  document.body.appendChild(pill);
 })();

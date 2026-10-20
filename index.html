@@ -17,6 +17,7 @@
   <link rel="apple-touch-icon" href="img/icon-180.png">
   <link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.revealReady)document.documentElement.classList.remove('js')},3000);</script>
 </head>
 <body>
 
@@ -41,12 +42,12 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="wrap hero-grid">
+    <div class="wrap">
+      <h1>Vakmanschap.<br>Agentic werkwijze.</h1>
+      <div class="hero-grid">
       <div>
-        <p class="eyebrow">Software-ontwikkeling · Groningen</p>
-        <h1>Vakmanschap.<br><span class="accent">Agentic werkwijze.</span></h1>
         <p class="lead">
-          Studio andere koek bouwt webapplicaties, platforms en koppelingen, samen met AI-agents.
+          Studio andere koek in Groningen bouwt webapplicaties, platforms en koppelingen, samen met AI-agents.
           Wij ontwerpen, sturen en reviewen; de agents nemen het zware werk over. Zo krijg je sneller resultaat, zonder in te leveren op kwaliteit.
         </p>
         <div class="actions">
@@ -55,45 +56,45 @@
         </div>
       </div>
 
-      <figure class="terminal" aria-label="Voorbeeld van een agentic werksessie">
+      <figure class="terminal" data-ui aria-label="Voorbeeld van een agentic werksessie">
         <div class="terminal-bar" aria-hidden="true"><span></span><span></span><span></span></div>
         <ol class="terminal-body" id="terminal">
-          <li class="t-cmd">plan: koppeling voorraad → webshop</li>
-          <li class="t-done">specificatie afgestemd met klant</li>
-          <li class="t-run">agent 1 · API-client + tests</li>
-          <li class="t-run">agent 2 · synchronisatie-job</li>
-          <li class="t-run">agent 3 · beheerscherm</li>
-          <li class="t-done">menselijke review · alle tests groen</li>
-          <li class="t-ship">klaar voor livegang</li>
+          <li class="t-cmd"><code>plan: koppeling voorraad → webshop</code></li>
+          <li class="t-done"><code>specificatie afgestemd met klant</code></li>
+          <li class="t-run"><code>agent 1 · API-client + tests</code></li>
+          <li class="t-run"><code>agent 2 · synchronisatie-job</code></li>
+          <li class="t-run"><code>agent 3 · beheerscherm</code></li>
+          <li class="t-done"><code>menselijke review · alle tests groen</code></li>
+          <li class="t-ship"><code>klaar voor livegang</code></li>
         </ol>
       </figure>
+      </div>
     </div>
   </section>
 
   <!-- DIENSTEN -->
   <section class="section" id="diensten">
     <div class="wrap">
-      <p class="eyebrow">Diensten</p>
-      <h2>Wat we voor je doen</h2>
-      <div class="grid grid-2">
-        <article class="card">
+      <h2 data-reveal>Wat we voor je doen</h2>
+      <div class="services">
+        <article class="service" data-reveal>
           <h3>Maatwerk software</h3>
           <p>Webapplicaties, platforms en interne tools, van datamodel tot interface. Ook bestaande software overnemen, moderniseren en verder brengen. We werken onder andere met Python, PHP, Rust, React, Vue, MySQL en MongoDB.</p>
         </article>
-        <article class="card">
+        <article class="service" data-reveal>
           <h3>Data en koppelingen</h3>
           <p>API's, integraties tussen systemen en het verzamelen en verwerken van data op schaal. Betrouwbaar, gemonitord en goed gedocumenteerd.</p>
         </article>
-        <article class="card card-ai">
-          <span class="chip">AI</span>
+        <div class="services-ai" data-reveal>
+        <article class="service">
           <h3>Agentic development voor teams</h3>
           <p>Wil je team zelf sneller bouwen met AI-agents? Wij helpen met inrichten: tooling, werkafspraken, reviewstappen en de context die agents nodig hebben om goed werk te leveren in jullie codebase.</p>
         </article>
-        <article class="card card-ai">
-          <span class="chip">AI</span>
+        <article class="service">
           <h3>AI in je product en processen</h3>
           <p>Je eigen systemen beschikbaar maken voor AI-assistenten, bijvoorbeeld via MCP, of slimme functies toevoegen aan je applicatie. Praktisch, veilig en met de mens aan het stuur.</p>
         </article>
+        </div>
       </div>
     </div>
   </section>
@@ -101,9 +102,8 @@
   <!-- WERKWIJZE -->
   <section class="section section-alt" id="werkwijze">
     <div class="wrap">
-      <p class="eyebrow">Werkwijze</p>
-      <h2>Zo ziet agentic werken eruit</h2>
-      <p class="intro">
+      <h2 data-reveal>Zo ziet agentic werken eruit</h2>
+      <p class="intro" data-reveal>
         Agentic development betekent dat AI-agents, zoals Claude Code, zelfstandig taken uitvoeren: code schrijven, tests
         draaien, documentatie bijwerken. Niet als gimmick, maar als vast onderdeel van het werk.
         Het verschil zit in de regie: die blijft altijd bij een ervaren developer.
@@ -111,29 +111,25 @@
 
       <div class="process">
         <ol class="steps">
-          <li>
-            <span class="step-no">01</span>
+          <li data-reveal>
             <h3>Scherp krijgen</h3>
             <p>We bepalen samen wat er gebouwd moet worden. Wij vertalen dat naar een concreet plan met een heldere afbakening.</p>
           </li>
-          <li>
-            <span class="step-no">02</span>
+          <li data-reveal>
             <h3>Agents aan het werk</h3>
             <p>Agents voeren afgebakende taken uit, vaak meerdere tegelijk. Wij maken de ontwerpkeuzes en bewaken de architectuur.</p>
           </li>
-          <li>
-            <span class="step-no">03</span>
+          <li data-reveal>
             <h3>Review en tests</h3>
             <p>Elke wijziging wordt door ons gereviewd en automatisch getest voordat hij live gaat. Geen code die niemand begrijpt.</p>
           </li>
-          <li>
-            <span class="step-no">04</span>
+          <li data-reveal>
             <h3>Opleveren</h3>
             <p>Je krijgt werkende software, broncode en documentatie. Alles blijft van jou, zonder lock-in.</p>
           </li>
         </ol>
 
-        <aside class="benefits">
+        <aside class="benefits" data-reveal>
           <h3>Wat levert het je op?</h3>
           <ul>
             <li>Kortere doorlooptijd</li>
@@ -147,11 +143,10 @@
   </section>
 
   <!-- KLANTEN -->
-  <section class="section" id="klanten">
-    <div class="wrap">
-      <p class="eyebrow">Klanten</p>
-      <h2>Voor wie we werken</h2>
-      <ul class="logos">
+  <section class="section section-tight" id="klanten">
+    <div class="wrap clients">
+      <h2 data-reveal>Voor wie we werken</h2>
+      <ul class="logos" data-reveal>
         <li>
           <a href="https://www.helloprint.com/" rel="noopener">
             <img src="img/clients/helloprint.svg" alt="HelloPrint" width="132" height="32">
@@ -175,24 +170,23 @@
   <section class="section section-alt" id="over">
     <div class="wrap about">
       <div>
-        <p class="eyebrow">Over</p>
-        <h2>Kort lijntje, geen tussenlagen</h2>
-        <p>
+        <h2 data-reveal>Kort lijntje, geen tussenlagen</h2>
+        <p data-reveal>
           Achter studio andere koek in Groningen staat Tim van der Putten, full-stack developer.
           Bij ons praat je direct met degene die het bouwt: geen accountmanagers of
           overdrachtsmomenten.
         </p>
-        <p>
+        <p data-reveal>
           Software bouwen is de afgelopen jaren echt andere koek geworden. Wij zitten daar graag
           middenin, en zetten die nieuwe manier van werken in voor onze opdrachtgevers.
         </p>
-        <p>
+        <p data-reveal>
           Waar een project om meer handen of andere expertise vraagt, werken we samen met
           onze partners <a href="https://bitserve.nl/" rel="noopener">Bitserve</a> en
           <a href="https://roordaict.nl/" rel="noopener">Roorda ICT</a>.
         </p>
       </div>
-      <aside class="about-partners" aria-labelledby="partners-title">
+      <aside class="about-partners" aria-labelledby="partners-title" data-reveal>
         <h3 class="partners-title" id="partners-title">Partners</h3>
         <ul class="logos logos-partners">
           <li>
@@ -214,10 +208,9 @@
   <section class="section" id="contact">
     <div class="wrap contact">
       <div>
-        <p class="eyebrow">Contact</p>
-        <h2>Laten we kennismaken</h2>
-        <p>Vertel kort waar je mee bezig bent, dan nemen we zo snel mogelijk contact met je op.</p>
-        <dl class="details">
+        <h2 data-reveal>Laten we kennismaken</h2>
+        <p data-reveal>Vertel kort waar je mee bezig bent, dan nemen we zo snel mogelijk contact met je op.</p>
+        <dl class="details" data-reveal>
           <dt>E-mail</dt>
           <dd><a href="mailto:info@studioanderekoek.nl">info@studioanderekoek.nl</a></dd>
           <dt>Bezoekadres</dt>
@@ -226,7 +219,7 @@
       </div>
 
       <!-- Formulier via Web3Forms: deze access_key is gekoppeld aan tim@studioanderekoek.nl en mag publiek zijn -->
-      <form class="form" id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+      <form class="form" id="contact-form" data-reveal action="https://api.web3forms.com/submit" method="POST" novalidate>
         <input type="hidden" name="access_key" value="f7325b31-dae9-4327-af6a-4edb7e2ba346">
         <input type="hidden" name="subject" value="Nieuw bericht via studioanderekoek.nl">
         <input type="hidden" name="from_name" value="studioanderekoek.nl">
@@ -260,6 +253,9 @@
 </main>
 
 <footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-name">studio andere koek</p>
+  </div>
   <div class="wrap footer-row">
     <span>&copy; <span id="year">2026</span> studio andere koek · Groningen</span>
     <span>KvK 02089436</span>
@@ -268,6 +264,8 @@
 </footer>
 
 <script src="js/main.js" defer></script>
+<!-- TIJDELIJK: versiekeuze, verwijderen vóór lancering -->
+<script src="versiebalk.js" defer></script>
 <!-- Bezoekersteller: GoatCounter (cookievrij, geen banner nodig). Telt niet op localhost. -->
 <script data-goatcounter="https://studioanderekoek.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 

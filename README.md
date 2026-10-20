@@ -26,7 +26,7 @@ python3 -m http.server 8000
 ## Inhoud aanpassen
 
 - **Teksten**: rechtstreeks in `index.html`.
-- **Placeholders**: alles wat nog bevestigd moet worden staat in `<mark class="todo">`. Zolang die er zijn, toont de pagina linksonder een knop die erlangs springt.
+- **Tijdelijke versiekeuze**: `versiebalk.js` toont bovenaan een balk om te wisselen tussen de huidige versie en `voor/` (de versie vóór de design-skills, ook bewaard als git-tag `voor-skills`). Vóór de lancering verwijderen: `versiebalk.js`, de map `voor/` en de `<script>`-regel in `index.html`.
 - **Kleuren**: de `:root`-variabelen bovenin `css/style.css`.
 
 ## Contactformulier
