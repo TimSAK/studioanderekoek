@@ -157,8 +157,17 @@ var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     return clear.length ? clear : out;
   }
 
+  var grove = document.querySelector('.grove');
+  function rustle() {
+    if (!grove) return;
+    grove.classList.remove('is-rustling'); void grove.offsetWidth; grove.classList.add('is-rustling');
+    setTimeout(function () { grove.classList.remove('is-rustling'); }, 800);
+  }
+  function inGrove(el) { return !!(el && grove && grove.contains(el)); }
+
   function fly(target) {
     clearTimeout(turnTimer);
+    if (inGrove(perch)) rustle();
     var v = view();
     var h = pos.w * .97;
     // Buiten beeld? Dan vertrekt hij net buiten de rand aan zijn kant (die sprong ziet niemand).
@@ -218,6 +227,7 @@ var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   function land(target) {
     pos = { x: target.spot.x, y: target.spot.y, w: target.spot.w };
     perch = target.el;
+    if (inGrove(perch)) rustle();
     remember(pos);
     settleClass(!!(perch && perch.hasAttribute('data-fit')));
     apply(0);
@@ -294,8 +304,15 @@ var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   bird.addEventListener('click', function () { setPaused(!paused); });
   try { if (localStorage.getItem(STORE) === 'stil') setPaused(true); } catch (e) {}
 
-  // Begin in de zin; opnieuw uitlijnen als lettertypes en de layout klaar zijn
-  var first = document.querySelector('.perch-word') || document.querySelector('[data-perch]');
+  // Begin in het bosje als dat in beeld is (grote schermen) en vlieg dan de zin in; anders meteen in de zin
+  var word = document.querySelector('.perch-word');
+  var nest = grove && grove.querySelector('[data-perch]');
+  var first = nest && nest.getClientRects().length && inView(boxOf(spotOf(nest)), view()) ? nest : (word || document.querySelector('[data-perch]'));
+  if (first === nest && word) {   // al naar de zin toe kijken, zonder zichtbare draai
+    flipEl.style.transition = 'none';
+    face(pageRect(word).x < pageRect(nest).x ? -1 : 1);
+    requestAnimationFrame(function () { requestAnimationFrame(function () { flipEl.style.transition = ''; }); });
+  }
   sitOn(first);
   function realign() { if (perch) sitOn(perch); }
   window.addEventListener('load', function () { realign(); setTimeout(realign, 600); });
@@ -305,7 +322,13 @@ var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     realign();
     bird.classList.add('is-ready');
     clearTimeout(wanderTimer);
-    if (!paused) wanderTimer = setTimeout(wander, 2600);   // na een paar seconden de zin uit
+    if (paused) return;
+    if (first === nest && perch === nest && word) {
+      // uit het bosje de zin in; daarna zwerft hij zoals altijd
+      wanderTimer = setTimeout(function () { if (perch === nest) fly({ spot: spotOf(word), el: word }); }, 700);
+    } else {
+      wanderTimer = setTimeout(wander, 2600);   // na een paar seconden de zin uit
+    }
   }, 1150);
 })();
 

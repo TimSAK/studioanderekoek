@@ -27,7 +27,13 @@ Elke sectie volgt hetzelfde raster: kop links (kolom 1–4), inhoud rechts (kolo
 - **Illustraties** bij de diensten en de werkwijze zijn origami-tekeningen in de kleuren van het logo, inline in
   `index.html` (kaart met route, gestapelde blokken, vinkje, papieren vliegtuigje, enzovoort). Er staan geen
   foto's op de site. Bij "Wat levert het je op?" staan zes vinkjes, elk in een van de zes logokleuren.
-- **De kolibrie** (`js/main.js`) begint in de zin bovenaan en vliegt er na een paar seconden uit. Tijdens het
+- **Het bosje** rechts in de hero is een origami-palmbosje in (lichte tinten van) de logoblauwen, inline in
+  `index.html` (`.grove`). Het staat alleen op schermen vanaf 900px breed, blijft onder de eerste regel van de
+  zin en groeit op brede schermen ernaast. De bladeren wiegen traag en ritselen als de kolibrie vertrekt of
+  landt. De tekening komt uit een klein Python-script (palmen, varens en struiken als driehoeken); pas je
+  hem met de hand aan, houd dan de `style="fill:var(--g1..g4)"`-kleuren aan zodat licht en donker blijven werken.
+- **De kolibrie** (`js/main.js`) begint in het bosje (op grote schermen) en vliegt van daar de zin in; op
+  kleinere schermen begint hij in de zin. Na een paar seconden vliegt hij eruit. Tijdens het
   scrollen blijft hij zitten. Eén seconde nadat het scrollen stopt, vliegt hij naar een plek in beeld als zijn
   eigen plek uit beeld is. Wie 5–9 seconden niet scrolt, ziet hem naar een andere willekeurige plek in beeld
   vliegen: nooit over tekst heen, het liefst niet dwars over een alinea, binnen de paginamarges, en niet

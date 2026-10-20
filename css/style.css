@@ -180,6 +180,7 @@ p { margin: 0 0 1em; }
 
 /* ── HERO ── */
 .hero {
+  position: relative;
   min-height: calc(100svh - 72px);
   display: flex; flex-direction: column; justify-content: center;
   padding: clamp(48px, 7vw, 96px) var(--margin);
@@ -198,6 +199,22 @@ p { margin: 0 0 1em; }
 .kleuren > span:nth-child(6) { color: var(--k6); }
 .hero .lead { max-width: 36em; margin: clamp(32px, 4vw, 48px) 0 0; }
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; margin-top: 32px; }
+
+/* Origami-bosje rechts in de hero: staat op de rand met de volgende sectie, naast (niet achter) de tekst */
+.grove {
+  position: absolute; right: var(--margin); bottom: 0; z-index: 0;
+  aspect-ratio: 380 / 382; pointer-events: none;
+  --g1: #4f8ea3; --g2: #5a9fb4; --g3: #6db3c7; --g4: #93cde0;   /* lichte tinten van de logoblauwen */
+  /* onder de eerste regel van de zin blijven, of op brede schermen ernaast groeien
+     (de eerste regel is ±1400px breed zodra de koptekst zijn maximale maat heeft) */
+  height: max(min(50svh, 32vw, 520px), min(100vw - 1460px, 76svh, 1000px));
+}
+:root[data-theme="dark"] .grove { --g1: #1d4651; --g2: #266074; --g3: #347991; --g4: #42aac8; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .grove { --g1: #1d4651; --g2: #266074; --g3: #347991; --g4: #42aac8; } }
+.grove svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.hero > :not(.grove) { position: relative; z-index: 1; }
+@media (max-width: 899px) { .grove { display: none; } }
+.g-frond { transform-box: view-box; transform-origin: var(--o); }
 
 /* ── SECTIES: één raster ── */
 .section {
@@ -289,13 +306,17 @@ p { margin: 0 0 1em; }
 .logos img { width: 170px; max-width: 100%; height: auto; }
 .logos img.logo-tall { width: auto; height: 96px; }
 .logos-small { margin-top: 40px; gap: 24px 56px; }
-.logos-small img { width: 150px; }
+.logos-small img, .logos-small .logo-clint { width: 150px; }
+.logo-clint { display: block; height: auto; }
+.logo-clint .t { fill: var(--ink); }
+:root[data-theme="dark"] .logo-clint .t { fill: #fff; opacity: .85; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .logo-clint .t { fill: #fff; opacity: .85; } }
 /* In de donkere kleurset: lichte silhouetten, want de meeste logo's hebben donkere tekst.
    La Mezza is een badge met een eigen achtergrond en blijft in kleur. */
 :root[data-theme="dark"] .logos img:not(.logo-tall) { filter: brightness(0) invert(1); opacity: .85; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .logos img:not(.logo-tall) { filter: brightness(0) invert(1); opacity: .85; } }
 @media (max-width: 560px) {
-  .logos img { width: 140px; }
+  .logos img, .logos .logo-clint { width: 140px; }
   .logos img.logo-tall { height: 80px; }
 }
 
@@ -354,6 +375,7 @@ p { margin: 0 0 1em; }
 .perch-end { width: 56px; margin: 28px 0 0 auto; }
 .perch-art { position: absolute; right: -6%; top: -18%; width: 30%; }
 .perch-form { position: absolute; right: 32px; top: -36px; width: 64px; }
+.perch-grove { position: absolute; left: 40%; top: 15%; width: 14%; }
 .perch-close { grid-column: 10 / -1; grid-row: 1 / span 2; justify-self: center; width: clamp(80px, 8vw, 128px); }
 @media (max-width: 860px) {
   .perch-head { position: absolute; right: 0; top: 0; margin: 0; width: 52px; }
@@ -437,7 +459,13 @@ p { margin: 0 0 1em; }
   .js .is-in .a-star { opacity: 1; transform: none; }
   .js .a-spark { opacity: 0; transition: opacity 400ms ease 900ms; }
   .js .is-in .a-spark { opacity: 1; }
+
+  /* Bosje: de bladeren wiegen traag; ze ritselen even als de kolibrie vertrekt of landt */
+  .g-frond { animation: sway 7s ease-in-out var(--d, 0s) infinite alternate; }
+  .grove.is-rustling .g-main .g-frond { animation: sway 7s ease-in-out var(--d, 0s) infinite alternate, rustle 700ms var(--ease-out); }
 }
+@keyframes sway { from { rotate: -1.6deg; } to { rotate: 1.6deg; } }
+@keyframes rustle { 20% { transform: rotate(4deg); } 50% { transform: rotate(-3deg); } 80% { transform: rotate(1deg); } }
 @keyframes line-up { to { transform: none; } }
 @keyframes rise { to { opacity: 1; transform: none; } }
 
