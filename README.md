@@ -58,7 +58,6 @@ python3 -m http.server 8000
 ## Inhoud aanpassen
 
 - **Teksten**: rechtstreeks in `index.html`.
-- **Tijdelijke versiekeuze**: `versiebalk.js` toont bovenaan een balk om te wisselen tussen het origineel (`voor/`, git-tag `voor-skills`) en dit redesign, en om licht/donker te forceren. Vóór de lancering verwijderen: `versiebalk.js`, de map `voor/` en de `<script>`-regels in `index.html` (de versiebalk en de kleurkeuze in de `<head>`). De eerdere polish-versie staat alleen nog in git (branch `polish`, tag `polish-skills`).
 - **Kleuren**: de `:root`-variabelen bovenin `css/style.css`.
 
 ## Contactformulier
@@ -73,11 +72,12 @@ Tegen spam zit er een verborgen `botcheck`-veld in (honeypot); Web3Forms weigert
 
 Naast paginabezoeken worden twee events geteld: `klik-mail` (klik op het mailadres) en `bericht-verstuurd` (contactformulier gelukt).
 
-## Eigen domein koppelen
+## Eigen domein
 
-1. Voeg een bestand `CNAME` toe met daarin `studioanderekoek.nl`, of zet in GitHub bij *Settings → Pages → Custom domain* het domein `studioanderekoek.nl`. Zet daarna *Enforce HTTPS* aan.
-   Zolang dit niet gebeurd is, staat de site als preview op https://timsak.github.io/studioanderekoek/.
-2. In `404.html` beginnen de paden met `/studioanderekoek/` (de projectmap op GitHub Pages). Haal dat
-   voorvoegsel weg zodra de site op het eigen domein staat (`/css/style.css`, `/img/kolibrie.svg`, `/`).
+De site draait op https://studioanderekoek.nl/ via het bestand `CNAME`. De DNS staat bij TransIP:
 
-3. Bij je DNS-provider: een `CNAME`-record `www` → `timsak.github.io`, en voor de apex `A`-records naar de GitHub Pages IP's ([docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)).
+- apex `studioanderekoek.nl`: `A`-records naar de GitHub Pages IP's `185.199.108.153`, `185.199.109.153`, `185.199.110.153` en `185.199.111.153` (en eventueel `AAAA` naar `2606:50c0:8000::153` t/m `8003::153`);
+- `www`: `CNAME` naar `timsak.github.io`;
+- de `MX`- en `TXT`-records van Fastmail blijven ongemoeid, anders stopt de mail.
+
+`404.html` gebruikt paden vanaf de root (`/css/style.css`), omdat hij op elke URL getoond kan worden.

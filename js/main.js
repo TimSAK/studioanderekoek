@@ -103,7 +103,7 @@ var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   function obstacles(v) {
     var area = { x: v.left, y: v.top, w: v.right - v.left, h: v.bottom - v.top };
     return Array.prototype.slice.call(document.querySelectorAll(OBSTACLES))
-      .filter(function (el) { return !el.closest('.bird') && !el.closest('.versiebalk') && el.getClientRects().length; })
+      .filter(function (el) { return !el.closest('.bird') && el.getClientRects().length; })
       .map(function (el) { return pageRect(el, 10); })
       .filter(function (r) { return r.w > 0 && r.h > 0 && overlaps(r, area); });
   }
@@ -129,7 +129,7 @@ var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   function textRects(v) {
     var area = { x: v.left, y: v.top - 400, w: v.right - v.left, h: v.bottom - v.top + 800 };
     return Array.prototype.slice.call(document.querySelectorAll(TEXT))
-      .filter(function (el) { return !el.closest('.versiebalk') && el.getClientRects().length; })
+      .filter(function (el) { return el.getClientRects().length; })
       .map(function (el) { return pageRect(el); })
       .filter(function (r) { return r.w > 0 && r.h > 0 && overlaps(r, area); });
   }
